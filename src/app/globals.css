@@ -1,0 +1,65 @@
+@import 'lenis/dist/lenis.css';
+@import 'tailwindcss';
+
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: var(--color-white);
+  --foreground: var(--color-gray-500);
+
+  --primary-50: #eefdfd;
+  --primary-100: #d4f8f9;
+  --primary-200: #aef0f3;
+  --primary-300: #76e2ea;
+  --primary-400: #37ccd9;
+  --primary-500: #1cb0be;
+  --primary-600: #1a8da0;
+  --primary-700: #1c7182;
+  --primary-800: #1f5d6b;
+  --primary-900: #1e4d5b;
+  --primary-950: #0e333e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  --font-sans: var(--font-outfit);
+}
+
+@layer components {
+  .section-container {
+    @apply container px-8 xl:px-20 mx-auto;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800;
+  }
+
+  .section-subtitle {
+    @apply text-xl font-medium text-gray-800;
+  }
+
+  .section-desc {
+    @apply text-sm xl:text-base;
+  }
+}
+
+body {
+  @apply overflow-x-hidden;
+  width: 100vw;
+  background: var(--background);
+  color: var(--foreground);
+}
