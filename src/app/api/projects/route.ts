@@ -1,3 +1,4 @@
+export const dynamic = 'force-static';
 import { getPaginatedProjects } from '@/lib/projects';
 import { NextResponse } from 'next/server';
 
