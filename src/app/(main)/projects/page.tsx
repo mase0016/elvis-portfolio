@@ -5,7 +5,7 @@ import View from './components/view';
 
 export const metadata: Metadata = {
   title: `Work | ${siteConfig.name}`,
-  description: 'Work samples from academic, freelance, and personal projects.',
+  description: 'Explore the history of my professional and personal projects',
 };
 
 /**

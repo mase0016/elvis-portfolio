@@ -55,7 +55,8 @@ const Portfolio = ({ projects }: PortfolioProps) => {
               Selected Works
             </h2>
             <p className={cn('section-desc')} data-title-item>
-              A curated collection of digital products bridging high-performance development with user-centric creative vision.
+              A showcase of robust web applications and interfaces engineered for performance and
+              user satisfaction
             </p>
           </div>
         </div>
@@ -80,7 +81,7 @@ const Portfolio = ({ projects }: PortfolioProps) => {
 
         <div className={cn('col-span-2', 'max-w-xs lg:max-w-sm', 'space-y-2')}>
           <h3 className={cn('section-subtitle')} data-footer-item>
-            Take a look through my archive to see a collection of my past work and projects.
+            Explore my full project archive to discover the breadth of my work
           </h3>
           <NavLinkUnderline
             className="inline-block"
@@ -88,7 +89,7 @@ const Portfolio = ({ projects }: PortfolioProps) => {
             activeProps={{ className: 'text-gray-800' }}
             data-footer-item
           >
-            View other projects
+            View all projects
             <ArrowUpRight className="w-4 h-4" />
           </NavLinkUnderline>
         </div>
