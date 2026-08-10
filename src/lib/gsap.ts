@@ -82,11 +82,14 @@ export const toChildrenScrollIn = (
  * Animates a given HTML element to fade in grayscale as it enters the viewport, and to fade out grayscale as it exits.
  *
  * @param {HTMLElement | null | undefined} $el - The HTML element to animate.
- * @returns {void}
+ * @returns {gsap.core.Timeline | undefined} The scrubbed timeline, so callers can refresh its
+ * ScrollTrigger once late-loading content (e.g. an image) settles the page's final layout.
  */
-export const toScrollGrayscale = ($el: HTMLElement | null | undefined): void => {
-  if (!$el) return;
-  gsap
+export const toScrollGrayscale = (
+  $el: HTMLElement | null | undefined,
+): gsap.core.Timeline | undefined => {
+  if (!$el) return undefined;
+  return gsap
     .timeline({
       scrollTrigger: {
         trigger: $el,
@@ -110,4 +113,12 @@ export const toScrollGrayscale = ($el: HTMLElement | null | undefined): void => 
  */
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll-triggered effects (like toScrollGrayscale) calculate their start/end
+  // positions based on the page's layout at the moment they're created. Images
+  // that finish loading afterward can shift that layout, leaving triggers
+  // pointing at the wrong scroll position, so images stay stuck grayscale
+  // instead of transitioning to color. Refreshing once everything has finished
+  // loading realigns every trigger with the page's true final layout.
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 }

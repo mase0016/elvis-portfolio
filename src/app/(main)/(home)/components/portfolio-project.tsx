@@ -82,13 +82,14 @@ const PortfolioProject = ({ project, number, total }: PortfolioProjectProps) => 
       descTl.fromTo('[data-project-desc]', SCROLL_IN_FROM_VARS, SCROLL_IN_TO_VARS);
       descTl.fromTo('[data-project-links]', SCROLL_IN_FROM_VARS, SCROLL_IN_TO_VARS, '<0.1');
 
-      toScrollGrayscale(ref.current);
+      const grayscaleTl = toScrollGrayscale(ref.current);
 
       // Image height change handling
       const $image = ref.current?.querySelector<HTMLImageElement>('[data-project-image]');
       const handleImageLoad = () => {
-        // Refresh the scroll trigger to account for the updated position after the image height adjusts
+        // Refresh the scroll triggers to account for the updated position after the image height adjusts
         imageTl.scrollTrigger?.refresh();
+        grayscaleTl?.scrollTrigger?.refresh();
       };
       $image?.addEventListener('load', handleImageLoad);
 

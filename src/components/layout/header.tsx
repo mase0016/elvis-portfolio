@@ -60,9 +60,8 @@ export default function Header() {
         )}
       >
         <div className="md:w-36 mr-auto md:mr-0">
-          <TransitionLink href="/">
-            {/* <Logo className="h-6 w-6" /> */}
-            <span className="text-base font-black leading-none tracking-tighter text-white">Elvis.</span>
+          <TransitionLink href="/" className="flex items-center">
+            <Logo className="h-6 w-auto shrink-0" />
           </TransitionLink>
         </div>
         <ol className={cn('flex items-center gap-4 md:gap-8')}>

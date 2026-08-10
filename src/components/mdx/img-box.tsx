@@ -46,11 +46,12 @@ const ImgBox = ({
   const { className: imageClassName = '', ...restImgProps } = imgProps ?? {};
   const ref = useRef<HTMLDivElement>(null);
   const tlRef = useRef<gsap.core.Timeline>(null);
+  const grayscaleTlRef = useRef<gsap.core.Timeline | undefined>(undefined);
 
   useGSAP(
     () => {
       toScrollIn(ref.current?.querySelector('figcaption'));
-      toScrollGrayscale(ref.current);
+      grayscaleTlRef.current = toScrollGrayscale(ref.current);
 
       tlRef.current = gsap.timeline({
         scrollTrigger: {
@@ -98,7 +99,10 @@ const ImgBox = ({
             width={672}
             height={0}
             sizes="(width < 64rem) 384px, 672px"
-            onLoad={() => tlRef.current?.scrollTrigger?.refresh()}
+            onLoad={() => {
+              tlRef.current?.scrollTrigger?.refresh();
+              grayscaleTlRef.current?.scrollTrigger?.refresh();
+            }}
             {...restImgProps}
           />
         </div>

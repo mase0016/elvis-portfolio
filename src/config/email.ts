@@ -35,7 +35,7 @@ export const emailConfig: EmailConfig = {
     user: process.env.SMTP_USER || '',
     pass: process.env.SMTP_PASSWORD || '',
   },
-  fromEmail: process.env.SMTP_FROM_EMAIL || '',
-  toEmail: process.env.SMTP_TO_EMAIL || '',
+  fromEmail: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER || '',
+  toEmail: process.env.SMTP_TO_EMAIL || 'elvizyzak8@gmail.com',
   minSubmissionTimeSeconds: 10, // Default value, can be overridden by environment variable if needed
 };

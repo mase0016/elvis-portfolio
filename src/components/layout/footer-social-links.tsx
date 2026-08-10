@@ -1,4 +1,4 @@
-import { Linkedin, Github, Dribbble } from 'lucide-react';
+import { Linkedin, Github, FileText } from 'lucide-react';
 import FooterSocialLink from './footer-social-link';
 import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
@@ -11,18 +11,18 @@ import { cn } from '@/lib/utils';
 const links = [
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/fahrirusliyadi/',
+    href: 'https://www.linkedin.com/in/elvis-zak-masembe-969699276',
     icon: Linkedin,
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/fahrirusliyadi',
+    href: 'https://github.com/mase0016',
     icon: Github,
   },
   {
-    label: 'Dribbble',
-    href: 'https://dribbble.com/fahrirusliyadi',
-    icon: Dribbble,
+    label: 'Resume',
+    href: '/resume.pdf',
+    icon: FileText,
   },
 ];
 

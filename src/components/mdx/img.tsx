@@ -34,6 +34,7 @@ const Img = ({ src, alt, width = 1920, height = 0, imgProps, className, ...props
   const { className: imageClassName = '', ...restImgProps } = imgProps ?? {};
   const ref = useRef<HTMLDivElement>(null);
   const tlRef = useRef<gsap.core.Timeline>(null);
+  const grayscaleTlRef = useRef<gsap.core.Timeline | undefined>(undefined);
 
   useGSAP(
     () => {
@@ -46,7 +47,7 @@ const Img = ({ src, alt, width = 1920, height = 0, imgProps, className, ...props
       });
       tlRef.current.fromTo('img', { scale: 1.5 }, { scale: 1, duration: 2 }, '<');
 
-      toScrollGrayscale(ref.current);
+      grayscaleTlRef.current = toScrollGrayscale(ref.current);
     },
     { scope: ref },
   );
@@ -64,7 +65,10 @@ const Img = ({ src, alt, width = 1920, height = 0, imgProps, className, ...props
         width={width}
         height={height}
         sizes="(width < 64rem) 1024px, 1920px"
-        onLoad={() => tlRef.current?.scrollTrigger?.refresh()}
+        onLoad={() => {
+          tlRef.current?.scrollTrigger?.refresh();
+          grayscaleTlRef.current?.scrollTrigger?.refresh();
+        }}
         {...restImgProps}
       />
     </div>

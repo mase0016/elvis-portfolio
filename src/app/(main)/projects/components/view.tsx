@@ -30,7 +30,7 @@ interface ViewProps {
  * @returns {JSX.Element} The rendered View component.
  */
 const View = ({ projects: allProjects, tags }: ViewProps) => {
-  const { isLoading, projectFilter } = useAppContext();
+  const { isLoading, projectFilter, setProjectFilter } = useAppContext();
   const projects = useMemo(
     () =>
       projectFilter.tag
@@ -38,6 +38,15 @@ const View = ({ projects: allProjects, tags }: ViewProps) => {
         : allProjects,
     [allProjects, projectFilter.tag],
   );
+
+  // The filter lives in a context that persists across page navigation, so
+  // without this it stays applied if the user picks a tag, leaves the page,
+  // and comes back later. Landing on this page fresh should always start
+  // from the full, unfiltered list.
+  useEffect(() => {
+    setProjectFilter({ tag: null });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline({ paused: isLoading });

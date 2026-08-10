@@ -3,6 +3,7 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { components } from '@/components/mdx';
 
 export interface ProjectImage {
@@ -46,7 +47,10 @@ export async function getProjectContent(slug: string) {
   const { content, frontmatter: data } = await compileMDX({
     source: fileContent,
     components,
-    options: { parseFrontmatter: true },
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: { remarkPlugins: [remarkGfm] },
+    },
   });
 
   return { slug, content, data } as Project;
