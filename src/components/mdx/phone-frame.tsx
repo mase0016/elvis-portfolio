@@ -75,18 +75,13 @@ const PhoneFrame = ({ src, alt, caption, className, ...props }: PhoneFrameProps)
         <div className="relative h-full w-full rounded-[1.6rem] lg:rounded-[1.8rem] bg-black p-[3px]">
           {/* Screen */}
           <div className="relative h-full w-full overflow-hidden rounded-[1.45rem] lg:rounded-[1.65rem] bg-white">
-            {/* Screenshot content starts below the island's safe area, like a
-                real iOS app, so it never overlaps the screenshot's own status
-                bar / header text. */}
-            <div className="absolute inset-x-0 bottom-0 top-[22px] overflow-hidden">
-              <Image
-                src={src}
-                alt={alt ?? caption ?? ''}
-                fill
-                className="object-cover object-top"
-                sizes="220px"
-              />
-            </div>
+            <Image
+              src={src}
+              alt={alt ?? caption ?? ''}
+              fill
+              className="object-cover object-top"
+              sizes="220px"
+            />
 
             {/* Dynamic Island */}
             <div className="pointer-events-none absolute left-1/2 top-[7px] h-[16px] w-[56px] -translate-x-1/2 rounded-full bg-black">
