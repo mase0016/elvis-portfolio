@@ -88,9 +88,9 @@ Three concepts were weighed: an agent-mediated listings model (rejected: it just
 
 The concept evolved across three rounds: v1 shipped Renter and Owner roles only, with no guest access; v2 added guest browsing after testers wanted to explore before signing up; v3 added the Housekeeper role as a full third side, with its own signup, dashboard, and accept/decline flow.
 
-<div className="not-prose grid grid-cols-2 gap-4 max-w-sm mx-auto my-8 lg:my-12" data-no-animation>
-  <Img src="/media/renteasy-uganda/browse-home.png" alt="Browse listings home screen" />
-  <Img src="/media/renteasy-uganda/listing-detail.png" alt="Listing detail screen" />
+<div className="not-prose flex flex-wrap justify-center gap-6 my-8 lg:my-12" data-no-animation>
+  <PhoneFrame src="/media/renteasy-uganda/browse-home.png" caption="Browse listings home screen" />
+  <PhoneFrame src="/media/renteasy-uganda/listing-detail.png" caption="Listing detail screen" />
 </div>
 
 ## High-Fidelity UI Design
@@ -117,24 +117,24 @@ Built in **Figma Make** using React + TypeScript with React Router: a genuine co
 2. **Dynamic price by house size × cleaning type**: selecting a house type and toggling Simple/Deep instantly recalculates the price.
 3. **Guest-to-renter handoff**: browsing state persists across the sign-up prompt, so the transition feels seamless rather than a reset.
 
-<div className="not-prose grid grid-cols-2 gap-4 max-w-sm mx-auto my-8 lg:my-12" data-no-animation>
-  <Img
+<div className="not-prose flex flex-wrap justify-center gap-6 my-8 lg:my-12" data-no-animation>
+  <PhoneFrame
     src="/media/renteasy-uganda/request-wash.png"
-    alt="Request a Wash screen with live basket pricing"
+    caption="Request a Wash screen with live basket pricing"
   />
-  <Img
+  <PhoneFrame
     src="/media/renteasy-uganda/request-cleaner.png"
-    alt="Request a Cleaner screen with dynamic pricing"
+    caption="Request a Cleaner screen with dynamic pricing"
   />
 </div>
 
 Before sharing externally, all three role flows were walked through solo, confirming no dead-end screens across 57 screens and that state correctly carried across transitions.
 
-<div className="not-prose grid grid-cols-2 gap-4 max-w-sm mx-auto my-8 lg:my-12" data-no-animation>
-  <Img src="/media/renteasy-uganda/owner-dashboard.png" alt="Owner dashboard screen" />
-  <Img
+<div className="not-prose flex flex-wrap justify-center gap-6 my-8 lg:my-12" data-no-animation>
+  <PhoneFrame src="/media/renteasy-uganda/owner-dashboard.png" caption="Owner dashboard screen" />
+  <PhoneFrame
     src="/media/renteasy-uganda/housekeeper-requests.png"
-    alt="Housekeeper service requests screen"
+    caption="Housekeeper service requests screen"
   />
 </div>
 

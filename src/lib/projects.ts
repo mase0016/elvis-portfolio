@@ -106,7 +106,7 @@ export async function getPrevNextProjects(currentSlug: string) {
 
 export async function getFeaturedProjects() {
   const allProjects = await getAllProjects();
-  return allProjects.filter((project) => project.data.featured) || [];
+  return allProjects.filter((project) => project.data.featured).slice(0, 5);
 }
 
 export async function getAllTags(): Promise<ProjectTagData[]> {
