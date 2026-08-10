@@ -10,10 +10,14 @@ import View from './components/view';
  */
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = await getProjectContent(slug);
+  const { content, ...project } = await getProjectContent(slug);
   const { prevProject, nextProject } = await getPrevNextProjects(slug);
 
-  return <View project={project} prevProject={prevProject} nextProject={nextProject} />;
+  return (
+    <View project={project} prevProject={prevProject} nextProject={nextProject}>
+      {content}
+    </View>
+  );
 }
 
 /**

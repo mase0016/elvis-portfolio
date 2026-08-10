@@ -5,8 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { getTimeline } from '@/lib/gsap';
 import { type Project, type ProjectTagData } from '@/lib/projects';
-import { useEffect } from 'react';
-import useProjectsData from '@/hooks/use-projects-data';
+import { useEffect, useMemo } from 'react';
 import { useAppContext } from '@/context/app-context';
 import Hero from './hero';
 import Intro from './intro';
@@ -18,30 +17,27 @@ import Filter from './filter';
  * @description Props for the View component.
  */
 interface ViewProps {
-  /** An array of project data. */
+  /** All project data. */
   projects: Project[];
   /** An array of unique tags associated with all projects, including their counts. */
   tags: ProjectTagData[];
-  /** The number of projects to display per page. */
-  perPage: number;
-  /** The total number of projects available. */
-  total: number;
 }
 
 /**
  * @function View
- * @description A React functional component that displays a list of projects with infinite scrolling.
+ * @description A React functional component that displays the full list of projects, filterable by tag.
  * @param {ViewProps} props - The props for the View component.
  * @returns {JSX.Element} The rendered View component.
  */
-const View = ({ projects: initialProjects, tags, perPage, total }: ViewProps) => {
+const View = ({ projects: allProjects, tags }: ViewProps) => {
   const { isLoading, projectFilter } = useAppContext();
-  const { projects, hasMore, loaderRef, totalProjects } = useProjectsData({
-    initialProjects,
-    perPage,
-    total,
-    tag: projectFilter.tag,
-  });
+  const projects = useMemo(
+    () =>
+      projectFilter.tag
+        ? allProjects.filter((project) => project.data.tags?.includes(projectFilter.tag as string))
+        : allProjects,
+    [allProjects, projectFilter.tag],
+  );
 
   useGSAP(() => {
     const tl = gsap.timeline({ paused: isLoading });
@@ -60,8 +56,7 @@ const View = ({ projects: initialProjects, tags, perPage, total }: ViewProps) =>
     <main className="h-feed">
       <Hero />
       <Intro withFilter={tags.length > 0} />
-      <Projects projects={projects} total={totalProjects} />
-      {hasMore && <div ref={loaderRef} />}
+      <Projects projects={projects} total={projects.length} />
       {tags.length > 0 && <Filter tags={tags} />}
     </main>
   );

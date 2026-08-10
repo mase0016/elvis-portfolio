@@ -1,13 +1,12 @@
 import { toScrollIn } from '@/lib/gsap';
-import { Project } from '@/lib/projects';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 
 interface ContentProps {
-  project: Project;
+  children: React.ReactNode;
 }
-const Content = ({ project }: ContentProps) => {
+const Content = ({ children }: ContentProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -28,7 +27,7 @@ const Content = ({ project }: ContentProps) => {
       )}
       ref={ref}
     >
-      {project.content}
+      {children}
     </div>
   );
 };

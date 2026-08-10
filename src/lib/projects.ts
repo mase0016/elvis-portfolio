@@ -100,27 +100,6 @@ export async function getPrevNextProjects(currentSlug: string) {
   return { prevProject, nextProject };
 }
 
-export async function getPaginatedProjects(page: number, projectsPerPage: number, tag?: string) {
-  const allProjects = await getAllProjects();
-  let filtered = allProjects;
-
-  if (tag) {
-    filtered = allProjects.filter((project) => project.data.tags?.includes(tag));
-  }
-
-  const startIndex = (page - 1) * projectsPerPage;
-  const endIndex = startIndex + projectsPerPage;
-  const projects = filtered.slice(startIndex, endIndex);
-
-  // Always return an object with expected properties to prevent client-side crashes
-  return {
-    projects: projects || [],
-    hasNextPage: endIndex < filtered.length,
-    hasPrevPage: page > 1,
-    total: filtered.length,
-  };
-}
-
 export async function getFeaturedProjects() {
   const allProjects = await getAllProjects();
   return allProjects.filter((project) => project.data.featured) || [];

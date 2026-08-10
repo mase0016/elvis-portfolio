@@ -15,7 +15,7 @@ tags:
   - Tailwind CSS
 url: 'https://ritzy-maize-10800647.figma.site'
 image:
-  src: /media/renteasy/featured.png
+  src: /media/renteasy-uganda/featured.png
   width: 1290
   height: 2796
 color: '#1E3F20'
@@ -32,7 +32,7 @@ This case study documents the full design process: problem framing, research, id
 
 <PhoneEmbed
   src="https://ritzy-maize-10800647.figma.site"
-  caption="Fully interactive — tap through the real app, right here."
+  caption="Fully interactive: tap through the real app, right here."
 />
 
 ## The Problem
@@ -66,16 +66,16 @@ This case study documents the full design process: problem framing, research, id
 - **Renters value pre-booking chat.** Testers described messaging an owner and negotiating before committing as the most praised part of the whole prototype.
 - **Brokers add cost at every step.** Testers described a rent markup plus separate "viewing fees" just to see a property, with no way to verify pricing against the real market.
 - **Car rentals rely on chains of connections.** Visitors from abroad often reach a car owner through "someone who knows someone," with each link adding a commission.
-- **Trusted housekeeping help is hard to find.** People are willing to pay for cleaning or laundry help — the blocker is trust, not cost.
+- **Trusted housekeeping help is hard to find.** People are willing to pay for cleaning or laundry help; the blocker is trust, not cost.
 - **Early usability gap (since fixed).** v1 testers wanted to browse listings before signing up, which directly led to the guest-browsing flow.
 
 **Competitive landscape:** Existing options like agent-run sites (e.g. Rentify.co.ug) redirect to WhatsApp instead of in-app chat, and Facebook/WhatsApp groups remain informal and agent-posted. None combine direct in-app chat, a full housekeeping booking flow, and a genuinely broker-free model the way RentEasy does.
 
 ## Strategy: Personas & Journeys
 
-- **Grace, the value-conscious renter** (29, Kampala) — wants a fair-priced rental without broker markup or viewing fees.
-- **Sarah, the independent property owner** (41, Kampala) — owns 2–3 units, wants to fill vacancies and screen renters herself.
-- **Aisha, the independent housekeeper** (34, Kampala) — offers cleaning and laundry, needs a way to prove reliability to strangers.
+- **Grace, the value-conscious renter** (29, Kampala): wants a fair-priced rental without broker markup or viewing fees.
+- **Sarah, the independent property owner** (41, Kampala): owns 2–3 units, wants to fill vacancies and screen renters herself.
+- **Aisha, the independent housekeeper** (34, Kampala): offers cleaning and laundry, needs a way to prove reliability to strangers.
 
 **Key user journeys**
 
@@ -84,14 +84,14 @@ This case study documents the full design process: problem framing, research, id
 
 ## Ideation
 
-Three concepts were weighed: an agent-mediated listings model (rejected — just digitizes the broker layer), rentals-only with no housekeeping (rejected — ignores real unmet demand surfaced in research), and a **three-sided marketplace with guest browsing** — selected, as the only concept answering every friction point research surfaced.
+Three concepts were weighed: an agent-mediated listings model (rejected: it just digitizes the broker layer), rentals-only with no housekeeping (rejected: it ignores real unmet demand surfaced in research), and a **three-sided marketplace with guest browsing**, selected as the only concept answering every friction point research surfaced.
 
 The concept evolved across three rounds: v1 shipped Renter and Owner roles only, with no guest access; v2 added guest browsing after testers wanted to explore before signing up; v3 added the Housekeeper role as a full third side, with its own signup, dashboard, and accept/decline flow.
 
-<FullWidth className="grid lg:grid-cols-2 gap-4">
-  <Img src="/media/renteasy/browse-home.png" alt="Browse listings home screen" />
-  <Img src="/media/renteasy/listing-detail.png" alt="Listing detail screen" />
-</FullWidth>
+<div className="not-prose grid grid-cols-2 gap-4 max-w-sm mx-auto my-8 lg:my-12" data-no-animation>
+  <Img src="/media/renteasy-uganda/browse-home.png" alt="Browse listings home screen" />
+  <Img src="/media/renteasy-uganda/listing-detail.png" alt="Listing detail screen" />
+</div>
 
 ## High-Fidelity UI Design
 
@@ -105,35 +105,38 @@ The concept evolved across three rounds: v1 shipped Renter and Owner roles only,
 | Floral White   | `#FFF8F0` | All backgrounds                         |
 | Night Bordeaux | `#3D0814` | Prices, alerts, destructive actions     |
 
-21 renter screens, 14 owner screens, and 11 housekeeper screens share the same header pattern, bottom nav style, card treatment, and button system — maintaining visual consistency across three distinct user roles rather than the more typical two.
+21 renter screens, 14 owner screens, and 11 housekeeper screens share the same header pattern, bottom nav style, card treatment, and button system, maintaining visual consistency across three distinct user roles rather than the more typical two.
 
 ## Prototyping
 
-Built in **Figma Make** using React + TypeScript with React Router — a genuine coded prototype, not a static click-through. Real state is passed between screens: selected listing, basket contents, running totals.
+Built in **Figma Make** using React + TypeScript with React Router: a genuine coded prototype, not a static click-through. Real state is passed between screens: selected listing, basket contents, running totals.
 
 **Standout interactions**
 
-1. **Live basket pricing** — quantity steppers update the sticky total instantly, no reload.
-2. **Dynamic price by house size × cleaning type** — selecting a house type and toggling Simple/Deep instantly recalculates the price.
-3. **Guest-to-renter handoff** — browsing state persists across the sign-up prompt, so the transition feels seamless rather than a reset.
+1. **Live basket pricing**: quantity steppers update the sticky total instantly, no reload.
+2. **Dynamic price by house size × cleaning type**: selecting a house type and toggling Simple/Deep instantly recalculates the price.
+3. **Guest-to-renter handoff**: browsing state persists across the sign-up prompt, so the transition feels seamless rather than a reset.
 
-<FullWidth className="grid lg:grid-cols-2 gap-4">
+<div className="not-prose grid grid-cols-2 gap-4 max-w-sm mx-auto my-8 lg:my-12" data-no-animation>
   <Img
-    src="/media/renteasy/request-wash.png"
+    src="/media/renteasy-uganda/request-wash.png"
     alt="Request a Wash screen with live basket pricing"
   />
   <Img
-    src="/media/renteasy/request-cleaner.png"
+    src="/media/renteasy-uganda/request-cleaner.png"
     alt="Request a Cleaner screen with dynamic pricing"
   />
-</FullWidth>
+</div>
 
 Before sharing externally, all three role flows were walked through solo, confirming no dead-end screens across 57 screens and that state correctly carried across transitions.
 
-<FullWidth className="grid lg:grid-cols-2 gap-4">
-  <Img src="/media/renteasy/owner-dashboard.png" alt="Owner dashboard screen" />
-  <Img src="/media/renteasy/housekeeper-requests.png" alt="Housekeeper service requests screen" />
-</FullWidth>
+<div className="not-prose grid grid-cols-2 gap-4 max-w-sm mx-auto my-8 lg:my-12" data-no-animation>
+  <Img src="/media/renteasy-uganda/owner-dashboard.png" alt="Owner dashboard screen" />
+  <Img
+    src="/media/renteasy-uganda/housekeeper-requests.png"
+    alt="Housekeeper service requests screen"
+  />
+</div>
 
 ## User Testing & Iteration
 
@@ -146,11 +149,11 @@ Before sharing externally, all three role flows were walked through solo, confir
 | Flow | Welcome → forced signup → browse          | Welcome → browse freely → signup prompt only on action |
 | Risk | Users could leave before seeing any value | Value is shown before any commitment is asked          |
 
-During this same testing round, casual feedback about needing trusted cleaning and laundry help led directly to designing the Housekeeper role as a full third side of the marketplace — not an afterthought, but a direct response to a gap surfaced in testing.
+During this same testing round, casual feedback about needing trusted cleaning and laundry help led directly to designing the Housekeeper role as a full third side of the marketplace, not an afterthought but a direct response to a gap surfaced in testing.
 
 ## Reflection
 
-**What I learned:** Designing for three distinct user roles at once surfaced tradeoffs a two-sided marketplace wouldn't — particularly navigation consistency (each role needed a different bottom nav) and handoffs between roles (a renter's booking becomes a housekeeper's incoming request, requiring both sides to be designed together).
+**What I learned:** Designing for three distinct user roles at once surfaced tradeoffs a two-sided marketplace wouldn't, particularly navigation consistency (each role needed a different bottom nav) and handoffs between roles (a renter's booking becomes a housekeeper's incoming request, requiring both sides to be designed together).
 
 **What I'd do differently:** Wireframe before high-fidelity design, especially for the housekeeping pricing screens where live-calculation logic needed careful layout thinking. I'd also run a more structured testing round with a wider mix of property owners.
 

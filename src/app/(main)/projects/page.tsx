@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
-import { getAllTags, getPaginatedProjects, ProjectTagData } from '@/lib/projects';
+import { getAllProjects, getAllTags, ProjectTagData } from '@/lib/projects';
 import View from './components/view';
 
 export const metadata: Metadata = {
@@ -10,13 +10,12 @@ export const metadata: Metadata = {
 
 /**
  * @function ProjectsPage
- * @description An asynchronous React functional component that fetches paginated project data and renders the View component.
+ * @description An asynchronous React functional component that fetches all project data and renders the View component.
  * @returns {Promise<JSX.Element>} A promise that resolves to the rendered View component.
  */
 export default async function ProjectsPage() {
-  const perPage = 5;
-  const data = await getPaginatedProjects(1, perPage);
+  const projects = await getAllProjects();
   const tags: ProjectTagData[] = await getAllTags();
 
-  return <View perPage={perPage} tags={tags} {...data} />;
+  return <View projects={projects} tags={tags} />;
 }

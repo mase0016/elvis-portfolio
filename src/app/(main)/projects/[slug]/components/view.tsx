@@ -17,9 +17,10 @@ interface ViewProps {
   project: Project;
   prevProject: Project | null;
   nextProject: Project | null;
+  children?: React.ReactNode;
 }
 
-const View = ({ project, prevProject, nextProject }: ViewProps) => {
+const View = ({ project, prevProject, nextProject, children }: ViewProps) => {
   const { isLoading } = useAppContext();
 
   useGSAP(() => {
@@ -68,9 +69,7 @@ const View = ({ project, prevProject, nextProject }: ViewProps) => {
             'py-8 lg:py-20',
           )}
         >
-          <div className="col-start-2 col-span-2">
-            {project.content && <Content project={project} />}
-          </div>
+          <div className="col-start-2 col-span-2">{children && <Content>{children}</Content>}</div>
           <div className="lg:flex justify-end items-end">
             <Navigation prevProject={prevProject} nextProject={nextProject} />
           </div>
