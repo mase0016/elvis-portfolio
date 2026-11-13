@@ -1,10 +1,8 @@
 import { useGSAP } from '@gsap/react';
-import { ArrowUpRight } from 'lucide-react';
 import { useRef } from 'react';
 import { toChildrenScrollIn } from '@/lib/gsap';
 import { cn } from '@/lib/utils';
 import { Project } from '@/lib/projects';
-import NavLinkUnderline from '@/components/ui/nav-link-underline';
 import PortfolioProject from './portfolio-project';
 
 /**
@@ -37,7 +35,6 @@ const Portfolio = ({ projects }: PortfolioProps) => {
   useGSAP(
     () => {
       toChildrenScrollIn(ref.current?.querySelector('[data-title]'), '[data-title-item]');
-      toChildrenScrollIn(ref.current?.querySelector('[data-footer]'), '[data-footer-item]');
     },
     { scope: ref },
   );
@@ -69,30 +66,6 @@ const Portfolio = ({ projects }: PortfolioProps) => {
           total={projects.length}
         />
       ))}
-
-      <div
-        className={cn('section-container', 'lg:grid grid-cols-4 gap-4 space-y-2', 'py-8 xl:py-20')}
-        data-footer
-      >
-        <p className="section-desc" data-footer-item>
-          Want to see more?
-        </p>
-
-        <div className={cn('col-span-2', 'max-w-xs lg:max-w-sm', 'space-y-2')}>
-          <h3 className={cn('section-subtitle')} data-footer-item>
-            Explore my full project archive to discover the breadth of my work
-          </h3>
-          <NavLinkUnderline
-            className="inline-block"
-            href="/projects"
-            activeProps={{ className: 'text-gray-800' }}
-            data-footer-item
-          >
-            View all projects
-            <ArrowUpRight className="w-4 h-4" />
-          </NavLinkUnderline>
-        </div>
-      </div>
     </section>
   );
 };

@@ -1,0 +1,99 @@
+---
+title: Novael Group
+description: Brand site for a Dubai-based premium concierge and logistics coordination firm
+date: 2025-09-01
+type: Client Project
+services:
+  - UI/UX Design
+  - Web Development
+role: Designer & Developer
+tags:
+  - Figma Make
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Vite
+image:
+  src: /media/novael-group/featured.png
+  width: 1440
+  height: 900
+color: '#0A3D2E'
+featured: true
+---
+
+## Overview
+
+Novael Group is a Dubai-based premium concierge and logistics coordination firm, serving discerning individuals, executives, and corporations across the Gulf, Africa, and Europe. I designed and built their brand site from the ground up: a six-page, editorial-feeling site that had to read as trustworthy and high-end to clients who expect white-glove service, while making it effortless for a prospective client to describe exactly what they need.
+
+<FullWidth>
+  <ImgBox
+    src="/media/novael-group/featured.png"
+    caption="Homepage"
+    color="#0A3D2E"
+    imgProps={{ width: 672, height: 420 }}
+  />
+</FullWidth>
+
+## Key Features
+
+- **Six dedicated pages**: Home, About, Services, Industries, How It Works, and Contact, each with its own purpose rather than a single long-scroll landing page.
+- **Five-service breakdown**: Executive & Personal Concierge, Travel Coordination, Personal Shopping, Logistics Coordination, and Corporate Coordination, each with its own bulleted scope and a "Request This Service" CTA.
+- **Industries grid**: five audience segments (Individuals, Businesses, Luxury & Hospitality, Corporate & Executive, Government & Diplomatic) presented as a full-bleed photographic grid, so a visitor immediately sees themselves reflected.
+- **Six-step process timeline**: a numbered, illustrated walkthrough from "Send Us Your Request" to "Follow-Up," designed to reassure a first-time client who doesn't yet know what working with a concierge firm looks like.
+- **WhatsApp-native contact form**: a detailed request form (service, preferred date, location, description) that formats the submission and opens it directly in WhatsApp, matching how the client actually prefers to receive and track requests.
+
+## Design
+
+The brand identity leans on a deep forest green, muted gold, and ivory palette with a serif display face for headlines, aiming for the feel of a private members' club rather than a typical logistics company. Photography throughout (Dubai skyline, hotel lobbies, airports, cargo ports, boardrooms) was chosen to signal the specific range of the business, from personal lifestyle requests to corporate and freight coordination.
+
+<FullWidth className="grid lg:grid-cols-2 gap-4">
+  <ImgBox
+    src="/media/novael-group/about.png"
+    caption="About: story, mission, core values, and leadership"
+    color="#0A3D2E"
+    imgProps={{ width: 672, height: 1319 }}
+  />
+  <ImgBox
+    src="/media/novael-group/services.png"
+    caption="Services: five offerings, each with its own scope and CTA"
+    color="#0A3D2E"
+    imgProps={{ width: 672, height: 1916 }}
+  />
+</FullWidth>
+
+<FullWidth className="grid lg:grid-cols-2 gap-4">
+  <ImgBox
+    src="/media/novael-group/industries.png"
+    caption="Industries We Serve"
+    color="#0A3D2E"
+    imgProps={{ width: 672, height: 995 }}
+  />
+  <ImgBox
+    src="/media/novael-group/how-it-works.png"
+    caption="Our Process: six steps from request to resolution"
+    color="#0A3D2E"
+    imgProps={{ width: 672, height: 1000 }}
+  />
+</FullWidth>
+
+## Technologies Used
+
+- **React + TypeScript**: Component-based structure for six distinct pages sharing one header, footer, and design system.
+- **Vite**: Fast local dev server and production build.
+- **Tailwind CSS v4**: Utility-first styling for the full palette, typography, and responsive layout.
+- **Figma Make**: Used to generate and iterate on the initial design and markup before refinement.
+
+## Standout Interaction
+
+The contact form doesn't post to a backend; it compiles every field into a formatted message and opens it directly in WhatsApp to the business's number, since that's genuinely how Novael's team prefers to receive and respond to requests. It also deep-links from each service card, so clicking "Request This Service" on Logistics Coordination arrives at the contact form with that service pre-selected.
+
+<FullWidth>
+  <ImgBox
+    src="/media/novael-group/contact.png"
+    caption="Contact: detailed request form with a WhatsApp-powered submission and an embedded map"
+    color="#0A3D2E"
+    imgProps={{ width: 672, height: 723 }}
+  />
+</FullWidth>
+
+**Disclaimer**: This site was built for a real client, Novael Group LLC, and is not yet publicly deployed.
