@@ -7,8 +7,12 @@ const AboutStats = (props: Omit<ScrollFillProps, 'renderContent'>) => {
       {...props}
       renderContent={({ isActive }) => (
         <div className="flex flex-col gap-20 items-center">
-          <AboutStat number={4.0} desc="Grade Point Average" isActive={isActive} hidePlus />
-          <AboutStat number={15} desc="Multi-media Projects Delivered" isActive={isActive} />
+          <AboutStat number={3.8} desc="Grade Point Average" isActive={isActive} hidePlus />
+          <AboutStat
+            number={15}
+            desc="Projects Delivered (school, freelance and personal)"
+            isActive={isActive}
+          />
           <AboutStat number={60} desc="Students Represented" isActive={isActive} />
         </div>
       )}

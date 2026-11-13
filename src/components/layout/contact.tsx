@@ -68,7 +68,8 @@ const Contact = () => {
                 READY TO ELEVATE YOUR BRAND WITH INTERACTIVE DIGITAL EXPERIENCES.
               </div>
               <p className={cn('section-desc', 'max-w-sm')} data-desc>
-                Merging UX/UI vision with robust development. Ready to deliver high-impact digital products for your 2026 co-op needs.
+                Merging UX/UI vision with robust development. Open to full-time UX/UI Designer and
+                Front-End Developer roles in Ottawa or remote.
               </p>
             </div>
 

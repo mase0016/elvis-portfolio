@@ -22,6 +22,8 @@ export interface Project {
     type?: string;
     services?: string[];
     role?: string;
+    /** Overrides the year derived from `date` when displaying Role · Year (e.g. "2025–Present"). */
+    yearLabel?: string;
     tags?: string[];
     url?: string;
     image?: ProjectImage;

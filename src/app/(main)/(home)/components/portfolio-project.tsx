@@ -154,6 +154,18 @@ const PortfolioProject = ({ project, number, total }: PortfolioProjectProps) => 
                 {project.data.type}
               </div>
             )}
+
+            {(project.data.role || project.data.date) && (
+              <div className={cn('section-desc', 'text-white/50 lg:text-end')}>
+                {[
+                  project.data.role,
+                  project.data.yearLabel ??
+                    (project.data.date ? new Date(project.data.date).getFullYear() : undefined),
+                ]
+                  .filter(Boolean)
+                  .join(' · ')}
+              </div>
+            )}
           </div>
         </div>
 

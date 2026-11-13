@@ -200,7 +200,7 @@ const ContactForm = ({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
           Get in touch!
         </h2>
         <p className={cn('section-desc', 'flex-1', 'text-gray-500')} data-contact-form-item>
-          I&lsquo;d love to hear about your company or project needs.
+          I&rsquo;d love to hear about your company or project needs.
         </p>
       </div>
 

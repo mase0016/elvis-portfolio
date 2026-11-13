@@ -12,20 +12,36 @@ import ScrollingText from '@/components/ui/scrolling-text';
 const skillSets: string[][] = [
   [
     'Figma',
+    'Figma Make',
     'PHP',
     'HTML5',
     'CSS',
-    'WordPress', 
+    'WordPress',
+    'Shopify',
     'JavaScript',
+    'React',
+    'Next.js',
     'Git',
-    'Drupal', 
+    'Drupal',
     'Adobe XD',
     'Adobe Illustrator',
     'Sketch',
     'Adobe Photoshop',
     'Adobe After Effects',
   ],
-  ['Github', 'Bootstrap', 'TypeScript', 'Adobe Premiere Pro', 'Adobe InDesign', 'Adobe Audition'],
+  [
+    'Github',
+    'Bootstrap',
+    'Tailwind CSS',
+    'TypeScript',
+    'GSAP',
+    'Vercel',
+    'Canva',
+    'Miro',
+    'Adobe Premiere Pro',
+    'Adobe InDesign',
+    'Adobe Audition',
+  ],
 ];
 
 const AboutSkills = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
@@ -61,7 +77,8 @@ const AboutSkills = ({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
       <div className={cn('section-container', 'lg:flex justify-between space-y-2')} data-title>
         <h3 className="text-xl font-medium text-gray-800">My Expertise</h3>
         <p className="section-desc text-gray-500">
-          Merging technical proficiency in modern frameworks with a creative vision for immersive, accessible digital experiences.
+          Merging technical proficiency in modern frameworks with a creative vision for immersive,
+          accessible digital experiences.
         </p>
       </div>
 

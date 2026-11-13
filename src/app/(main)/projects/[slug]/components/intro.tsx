@@ -67,8 +67,13 @@ const Intro = ({ project }: IntroProps) => {
               {project.data.services && (
                 <MetaItem label="Service" value={project.data.services.join(' / ')} />
               )}
-              {project.data.date && (
-                <MetaItem label="Year" value={new Date(project.data.date).getFullYear()} />
+              {(project.data.yearLabel || project.data.date) && (
+                <MetaItem
+                  label="Year"
+                  value={
+                    project.data.yearLabel ?? new Date(project.data.date as string).getFullYear()
+                  }
+                />
               )}
             </div>
           </div>

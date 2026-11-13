@@ -1,4 +1,4 @@
-import { Linkedin, Github, FileText } from 'lucide-react';
+import { Linkedin, Github, FileText, FileCode2 } from 'lucide-react';
 import FooterSocialLink from './footer-social-link';
 import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
@@ -20,9 +20,14 @@ const links = [
     icon: Github,
   },
   {
-    label: 'Resume',
-    href: '/resume.pdf',
+    label: 'Resume (UX/UI)',
+    href: '/resume-uxui.pdf',
     icon: FileText,
+  },
+  {
+    label: 'Resume (Dev)',
+    href: '/resume-frontend.pdf',
+    icon: FileCode2,
   },
 ];
 

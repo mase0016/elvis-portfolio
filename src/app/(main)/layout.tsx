@@ -19,7 +19,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
+  title: siteConfig.metaTitle,
   description: siteConfig.description,
 };
 

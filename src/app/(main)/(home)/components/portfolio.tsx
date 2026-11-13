@@ -55,8 +55,7 @@ const Portfolio = ({ projects }: PortfolioProps) => {
               Selected Works
             </h2>
             <p className={cn('section-desc')} data-title-item>
-              A showcase of robust web applications and interfaces engineered for performance and
-              user satisfaction
+              Design and development work, from user research to live, coded products
             </p>
           </div>
         </div>

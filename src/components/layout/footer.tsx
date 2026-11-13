@@ -77,7 +77,8 @@ const Footer = () => {
               </MultilineSlideUp>
             </h2>
             <p className={cn('section-desc', 'max-w-sm', 'lg:mb-16')} data-desc>
-              Academic excellence meets creative execution. I am ready to contribute to your team&apos;s success. Let&apos;s connect.
+              UX/UI designer who designs and builds. I am ready to contribute to your team&apos;s
+              success. Let&apos;s connect.
             </p>
             <p data-contact>
               <NavLinkUnderline

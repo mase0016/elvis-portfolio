@@ -11,32 +11,18 @@ const experiences = [
   {
     from: 'Jan 2023',
     to: 'Present',
-    title: 'Digital Graphics Designer',
-    company: 'Freelance',
+    title: 'Freelance Digital Designer & Front-End Developer',
+    company: 'Ottawa, ON',
+    description:
+      'Design and build digital assets and web content for schools, startups and local businesses, from brand identities to website layouts, advising clients on UI layout and visual hierarchy.',
   },
   {
-    from: 'Feb 2024',
+    from: 'Jan 2024',
     to: 'Present',
-    title: 'Photographer and Videographer/Video Producer',
-    company: 'Freelance',
-  },
-  {
-    from: 'Nov 2024',
-    to: 'Present',
-    title: 'Front-end Developer/Designer',
-    company: 'School $ Personal projects/Freelance',
-  },
-  {
-    from: 'Jan 2025',
-    to: 'Present',
-    title: 'UX/UI Designer',
-    company: 'School $ Personal projects',
-  },
-  {
-    from: 'Jan 2025',
-    to: 'Present',
-    title: 'Content Management System (CMS) Developer/Designer',
-    company: 'School $ Personal projects',
+    title: 'Freelance Photographer & Videographer',
+    company: 'Ottawa, ON',
+    description:
+      "Produce photo and short-form video content for clients' websites and social media campaigns, edited in Lightroom, Premiere Pro, After Effects and Audition.",
   },
 ];
 
@@ -54,7 +40,9 @@ const AboutExperience = () => {
   return (
     <div className={cn('w-sm space-y-8')} ref={ref}>
       <div className={cn('space-y-2')} data-experience-title>
-        <h3 className="text-xl font-medium text-gray-800">My Journey as a Multimedia Designer/Developer</h3>
+        <h3 className="text-xl font-medium text-gray-800">
+          My Journey as a Multimedia Designer/Developer
+        </h3>
         {/* <p className="section-desc text-gray-500">My Journey in Web Design & Development</p> */}
       </div>
 
@@ -68,6 +56,9 @@ const AboutExperience = () => {
             <div>
               <h4 className="font-medium text-gray-800">{experience.title}</h4>
               <p className="section-desc text-gray-500">{experience.company}</p>
+              {experience.description && (
+                <p className="section-desc text-gray-500 mt-2">{experience.description}</p>
+              )}
             </div>
           </div>
         ))}

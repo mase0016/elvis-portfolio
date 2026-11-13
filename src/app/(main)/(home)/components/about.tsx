@@ -23,19 +23,21 @@ const About = () => {
           <div className={cn('max-w-none space-y-2')} data-intro>
             <h2 className="section-desc text-gray-500">Who am I?</h2>
             <p className="text-xl font-medium text-gray-800">
-              I&apos;m a UX/UI Designer with a front-end development background, currently finishing
-              my Interactive Media Design diploma at Algonquin College with a 4.0 GPA and a place on
-              the Dean&apos;s Honours List. I bridge the gap between aesthetic design and functional
-              development, with expertise spanning UX/UI design, responsive web development, CMS
-              platforms (WordPress, Drupal, Shopify, PHP), and professional media production.
+              I&apos;m a UX/UI Designer with a front-end development background, a graduate of
+              Algonquin College&apos;s Interactive Media Design program with a 3.8 GPA and a place
+              on the Dean&apos;s Honours List. I bridge the gap between aesthetic design and
+              functional development, with expertise spanning UX/UI design, responsive web
+              development, CMS platforms (WordPress, Drupal, Shopify, PHP), and professional media
+              production.
               <br />
               With a background in freelance digital graphics and photo/videography, I thrive in
               collaborative environments solving real problems for real users. I am now seeking a
-              full-time role as a UX/UI Designer, where I can apply my technical proficiency in
-              Figma, the Adobe Creative Suite, and responsive web design to build user-centric
-              digital products for a dynamic creative team. My background in front-end development
-              gives me a practical understanding of what&apos;s feasible to build, letting me design
-              interfaces that are both thoughtful and implementation-ready.
+              full-time role as a UX/UI Designer or Front-End Developer, where I can apply my
+              technical proficiency in Figma, the Adobe Creative Suite, and responsive web
+              development to build user-centric digital products for a dynamic creative team. My
+              background in front-end development gives me a practical understanding of what&apos;s
+              feasible to build, letting me design interfaces that are both thoughtful and
+              implementation-ready.
             </p>
           </div>
         </div>

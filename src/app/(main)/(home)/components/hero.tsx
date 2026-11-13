@@ -15,12 +15,13 @@ import MultilineSlideUp from '@/components/ui/multiline-slide-up';
  * The roles that the site owner identifies with.
  */
 const roles = [
-                "Web Developer", 
-                "UX/UI Designer", 
-                "CMS Developer", 
-                "Graphic Designer",
-                "Multimedia Creator"
-              ];
+  'UX/UI Designer',
+  'Front-End Developer',
+  'Web Developer',
+  'CMS Developer',
+  'Graphic Designer',
+  'Multimedia Creator',
+];
 
 /**
  * Hero component that displays an animated introduction section.
